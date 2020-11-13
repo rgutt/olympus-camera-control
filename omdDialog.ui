@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>mainDialog</class>
+ <widget class="QDialog" name="mainDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1339</width>
+    <height>745</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>Noto Sans</family>
+   </font>
+  </property>
+  <property name="contextMenuPolicy">
+   <enum>Qt::DefaultContextMenu</enum>
+  </property>
+  <property name="windowTitle">
+   <string>OMD Camera Control</string>
+  </property>
+  <widget class="QComboBox" name="isoComboBox">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>1080</x>
+     <y>160</y>
+     <width>221</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="accessibleName">
+    <string>isospeedvalue</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="isoLabel">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>1120</x>
+     <y>130</y>
+     <width>141</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Noto Sans</family>
+     <pointsize>12</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Iso speed value</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="focalComboBox">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>1080</x>
+     <y>250</y>
+     <width>221</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="accessibleName">
+    <string>focalvalue</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="focalLabel">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>1120</x>
+     <y>220</y>
+     <width>151</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Noto Sans</family>
+     <pointsize>12</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>focal length value</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="shutComboBox">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>1080</x>
+     <y>340</y>
+     <width>221</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="accessibleName">
+    <string>shutspeedvalue</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="shutLabel">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>1120</x>
+     <y>310</y>
+     <width>151</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Noto Sans</family>
+     <pointsize>12</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>shut speed value</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="expCompComboBox">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>1080</x>
+     <y>430</y>
+     <width>221</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="accessibleName">
+    <string>expcomp</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="expCompLabel">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>1110</x>
+     <y>400</y>
+     <width>181</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Noto Sans</family>
+     <pointsize>12</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>expose compensation</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="takeModeComboBox">
+   <property name="geometry">
+    <rect>
+     <x>1080</x>
+     <y>70</y>
+     <width>221</width>
+     <height>32</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="takeModeLabel">
+   <property name="geometry">
+    <rect>
+     <x>1140</x>
+     <y>40</y>
+     <width>141</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Noto Sans</family>
+     <pointsize>12</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>take mode</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="addCapturePushButton">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>920</x>
+     <y>580</y>
+     <width>141</width>
+     <height>34</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Add to capture list</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="connectedLabel">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>1110</x>
+     <y>620</y>
+     <width>101</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <italic>false</italic>
+     <bold>true</bold>
+     <strikeout>false</strikeout>
+     <stylestrategy>PreferAntialias</stylestrategy>
+    </font>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:red</string>
+   </property>
+   <property name="text">
+    <string>not connected</string>
+   </property>
+  </widget>
+  <widget class="QSlider" name="connectedSlider">
+   <property name="geometry">
+    <rect>
+     <x>1140</x>
+     <y>650</y>
+     <width>31</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:red</string>
+   </property>
+   <property name="maximum">
+    <number>1</number>
+   </property>
+   <property name="sliderPosition">
+    <number>0</number>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QLabel" name="liveStreamLabel">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>80</y>
+     <width>640</width>
+     <height>480</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>CrossCursor</cursorShape>
+   </property>
+   <property name="mouseTracking">
+    <bool>true</bool>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);
+border-color: rgb(0, 0, 0)
+</string>
+   </property>
+   <property name="text">
+    <string>Live Stream</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="setAsCurrentPushButton">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>1150</x>
+     <y>510</y>
+     <width>81</width>
+     <height>34</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Set values</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="liveIsoLabel">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>570</y>
+     <width>81</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>14</pointsize>
+     <weight>75</weight>
+     <italic>true</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:green</string>
+   </property>
+   <property name="text">
+    <string>Iso</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="liveFocalLabel">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>570</y>
+     <width>91</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>14</pointsize>
+     <weight>75</weight>
+     <italic>true</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:green</string>
+   </property>
+   <property name="text">
+    <string>focal</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="liveShutLabel">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>570</y>
+     <width>101</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>14</pointsize>
+     <weight>75</weight>
+     <italic>true</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:green</string>
+   </property>
+   <property name="text">
+    <string>shut</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="liveExpLabel">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>450</x>
+     <y>570</y>
+     <width>91</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>14</pointsize>
+     <weight>75</weight>
+     <italic>true</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:green</string>
+   </property>
+   <property name="text">
+    <string>exp</string>
+   </property>
+  </widget>
+  <widget class="QTreeWidget" name="selectedTreeWidget">
+   <property name="geometry">
+    <rect>
+     <x>670</x>
+     <y>80</y>
+     <width>401</width>
+     <height>481</height>
+    </rect>
+   </property>
+   <property name="horizontalScrollBarPolicy">
+    <enum>Qt::ScrollBarAsNeeded</enum>
+   </property>
+   <property name="columnCount">
+    <number>6</number>
+   </property>
+   <attribute name="headerCascadingSectionResizes">
+    <bool>true</bool>
+   </attribute>
+   <attribute name="headerMinimumSectionSize">
+    <number>30</number>
+   </attribute>
+   <attribute name="headerDefaultSectionSize">
+    <number>80</number>
+   </attribute>
+   <attribute name="headerHighlightSections">
+    <bool>true</bool>
+   </attribute>
+   <attribute name="headerShowSortIndicator" stdset="0">
+    <bool>false</bool>
+   </attribute>
+   <attribute name="headerStretchLastSection">
+    <bool>false</bool>
+   </attribute>
+   <column>
+    <property name="text">
+     <string notr="true">1</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string notr="true">2</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string notr="true">3</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string notr="true">4</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string notr="true">5</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string notr="true">6</string>
+    </property>
+   </column>
+  </widget>
+  <widget class="QComboBox" name="liveResComboBox">
+   <property name="geometry">
+    <rect>
+     <x>600</x>
+     <y>60</y>
+     <width>51</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="deleteCapturePushButton">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>580</y>
+     <width>161</width>
+     <height>34</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Delete from capture list</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="takePicturePushButton">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>820</x>
+     <y>640</y>
+     <width>88</width>
+     <height>34</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Take picture</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
