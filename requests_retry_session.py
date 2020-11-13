@@ -1,4 +1,3 @@
-# This Python file uses the following encoding: utf-8
 import requests
 from requests.packages.urllib3.util.retry import Retry
 from requests.adapters import HTTPAdapter
@@ -21,6 +20,3 @@ def requests_retry_session(
     session.mount('http://', adapter)
     session.mount('https://', adapter)
     return session
-
-# if__name__ == "__main__":
-#     pass
