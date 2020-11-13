@@ -2,18 +2,15 @@ from cam_properties import cam_properties
 import time
 
 def hexstring_to_floatstring(s):
-#    s = ''.join([c for c in s])
     s_int = int(s,16) / 10
     s_string = str(s_int)
     return s_string
 
 def hexstring_to_int(s):
-#    s = ''.join([c for c in s])
     s_int = int(s,16)
     return s_int
 
 def hexstring_to_intstring(s):
-#    s = ''.join([c for c in s])
     s_int = int(s,16)
     return str(s_int)
 
@@ -58,7 +55,6 @@ class RecvData:
         self.frame_number_tag =  []
         self.frame_id_tag = []
         self.stream_id_tag = []
-#        self.data = bin_data.hex()
         self.bin_data = bin_data
         self.subframe = b''
         self.startID = 12
@@ -88,13 +84,9 @@ class RecvData:
         self.subframe = self.bin_data[self.startID:self.endID]
 
     def extract_camera_settings(self,camera_settings_raw):
-#        print(camera_settings_raw)
-#        time.sleep(10)
         self.cameraCurrenValues["focalvalue"] = [hexstring_to_floatstring(camera_settings_raw[214:216]),hexstring_to_floatstring(camera_settings_raw[206:208]),hexstring_to_int(camera_settings_raw[198:200])//10]
-#        print(hexstring_to_int((camera_settings_raw[176:180])))
         if hexstring_to_int((camera_settings_raw[176:180])) > 1:                                                           #89 is 01 = 1 if the shutterspeed is < 1
             self.cameraCurrenValues["shutspeedvalue"][0] = str(hexstring_to_int(camera_settings_raw[176:180]) / hexstring_to_int((camera_settings_raw[182:184])))  + '"'
-#            if self.cameraCurrenValues["shutspeedvalue"][0]
         else:
             self.cameraCurrenValues["shutspeedvalue"][0] = hexstring_to_intstring(camera_settings_raw[180:184])
         self.cameraCurrenValues["shutspeedvalue"][1] = hexstring_to_intstring(camera_settings_raw[172:176])
@@ -105,8 +97,7 @@ class RecvData:
             self.cameraCurrenValues["shutspeedvalue"][0] = "livetime"
         elif self.cameraCurrenValues["shutspeedvalue"][0] == '65534':
             self.cameraCurrenValues["shutspeedvalue"][0] = "livebulb"
-
-#        print()
+            
         if hexstring_to_intstring(camera_settings_raw[260:264]) == "65534":
             self.cameraCurrenValues["isospeedvalue"][0] = "Low"
         else:
@@ -117,7 +108,6 @@ class RecvData:
             self.cameraCurrenValues["expcomp"][0] = "+" + hexstring_to_floatstring(camera_settings_raw[246:248])
 
 
-#        print(self.cameraCurrenValues)
 
 
 class Frame:
@@ -128,9 +118,7 @@ class Frame:
         self.frame_id_tag = []
         self.n_subframes = 0
         self.prev_subframe_number_tag = []
-
         self.cameraCurrenValues= { }
-
         self.add_subframe(bin_data)
 
 
@@ -144,21 +132,16 @@ class Frame:
 
                 self.cameraCurrenValues = recvdata.cameraCurrenValues
             else:
-#                print("first")
                 return True
 
         if self.frame_id_tag == recvdata.frame_id_tag and self.frame_start == True:
             self.frame = self.frame + recvdata.subframe
-#            self.frame[-1:-1] = recvdata.subframe
-#            for item in recvdata.subframe:
-#                self.frame.append(item)
             self.n_subframes = self.n_subframes + 1
             self.prev_subframe_number_tag = recvdata.frame_number_tag
             if recvdata.pos == "end":
                 self.frame_end = True
             return False
         else:
-#            print("second")
             return True
 
     def has_finished(self):
