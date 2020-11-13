@@ -1,18 +1,8 @@
 import sys
-#from PySide2.QtUiTools import QUiLoader
-#from PySide2.QtWidgets import QApplication, QPushButton, QLineEdit, QComboBox, QLabel, QSlider, QTreeWidget, QTreeWidgetItem,QDialog
-#from PySide2.QtCore import QFile, QObject, Signal, Slot, QTimer, QThread, Qt
-#from PySide2.QtGui import QImage, QPixmap
-
-#from PyQt5.QtWidgets import QApplication, QPushButton, QLineEdit, QComboBox, QLabel, QSlider, QTreeWidget,QDialog
-#from PyQt5.QtCore import QFile, QObject, pyqtSignal, pyqtSlot, QTimer, QThread, Qt
-#from PyQt5.QtGui import QImage, QPixmap
 
 from PyQt5.QtWidgets import QDialog,QApplication, QTreeWidgetItem
 from PyQt5.QtCore import QThread, pyqtSignal, pyqtSlot, Qt
 from PyQt5.QtGui import QImage, QPixmap, QPainter, QBrush, QPen
-
-#from PyQt5 import QtCore, QtGui, QtWidgets
 
 import omddialog as omdDialog
 import time
